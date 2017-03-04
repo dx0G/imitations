@@ -110,6 +110,9 @@ body {
       #top-bar .left .game-name p {
         color: #333;
         font-size: 16px; }
+  #top-bar a.wb:hover {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
 
 .more {
   position: absolute;
@@ -117,6 +120,7 @@ body {
   left: 0;
   width: 100%;
   background-color: #e1ebeb;
+  -webkit-transition: all .5s;
   transition: all .5s; }
 
 .dropdown {
@@ -127,7 +131,12 @@ body {
     width: 215px;
     height: 104px;
     color: #666;
-    text-align: center; }
+    text-align: center;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease; }
+    .dropdown a:hover {
+      -webkit-transform: translate3d(0, -10px, 0);
+      transform: translate3d(0, -10px, 0); }
 
 .tongren {
   display: none; }
@@ -221,7 +230,9 @@ body {
   height: 800px;
   margin-left: -250px;
   background: url("../img/qingmin.png") no-repeat;
+  -webkit-transition: all 1s .7s;
   transition: all 1s .7s;
+  -webkit-transform: translate3d(0, 250px, 0);
   transform: translate3d(0, 250px, 0);
   opacity: 0; }
 
@@ -235,6 +246,7 @@ body {
   background: url("../img/shenle.png") no-repeat;
   -webkit-transition: all 1s .5s;
   transition: all 1s .5s;
+  -webkit-transform: translate3d(0, 250px, 0);
   transform: translate3d(0, 250px, 0);
   opacity: 0; }
 
@@ -246,7 +258,9 @@ body {
   height: 450px;
   margin-left: -530px;
   background: url("../img/slogon.png") no-repeat;
+  -webkit-transition: all 1s .7s ease-out;
   transition: all 1s .7s ease-out;
+  -webkit-transform: translate3d(0, -150px, 0);
   transform: translate3d(0, -150px, 0);
   opacity: 0; }
 
@@ -267,7 +281,9 @@ body {
   top: 38px;
   width: 70px;
   height: 199px;
+  -webkit-transition: all 1s 1.2s;
   transition: all 1s 1.2s;
+  -webkit-transform: translate3d(-50px, 0, 0);
   transform: translate3d(-50px, 0, 0);
   opacity: 0;
   z-index: 10; }
@@ -276,9 +292,11 @@ body {
     width: 100%;
     height: 100%;
     background: url("../img/logo_yys.png") no-repeat;
+    -webkit-transition: all .3s linear;
     transition: all .3s linear; }
 
 .animate {
+  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   opacity: 1; }
 
@@ -296,6 +314,7 @@ body {
   border-radius: 10px 0 0 10px;
   background-color: #fccc00;
   box-shadow: inset 0 0 7px 4px #feeb00;
+  -webkit-transition: all .6s;
   transition: all .6s; }
 
 .download-box {
@@ -329,8 +348,14 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    -webkit-animation: qrcode 2.5s linear infinite;
     animation: qrcode 2.5s linear infinite; }
 
+@-webkit-keyframes qrcode {
+  0% {
+    top: 0; }
+  100% {
+    top: 91px; } }
 @keyframes qrcode {
   0% {
     top: 0; }
@@ -418,11 +443,14 @@ body {
       height: 33px;
       border-radius: 20px;
       background-color: #68d7fc;
+      -webkit-transition: all .2s linear;
       transition: all .2s linear;
+      -webkit-transform: translate3d(0, 20%, 0);
       transform: translate3d(0, 20%, 0);
       opacity: 0; }
     .news-tabs li em.active {
       opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0); }
   .news-tabs .media span {
     background: none; }
@@ -504,6 +532,7 @@ body {
     display: block;
     width: 314px;
     height: 103px;
+    -webkit-transition: all .2s linear;
     transition: all .2s linear; }
     .side-bar-list a span {
       display: block;
@@ -611,8 +640,7 @@ body {
 .top-box {
   overflow: hidden;
   width: 1200px;
-  margin: 0 auto;
-  margin-bottom: 42px; }
+  margin: 0 auto 42px; }
   .top-box a {
     position: relative;
     float: left;
@@ -621,6 +649,7 @@ body {
     margin: 5px 8px 0; }
     .top-box a:hover em {
       opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0); }
     .top-box a em {
       position: absolute;
@@ -630,7 +659,9 @@ body {
       height: 91px;
       background-position: -1200px -200px;
       opacity: 0;
+      -webkit-transform: translate3d(0, 10px, 0);
       transform: translate3d(0, 10px, 0);
+      -webkit-transition: all .3s linear;
       transition: all .3s linear; }
     .top-box a span {
       position: relative;
@@ -638,6 +669,7 @@ body {
       z-index: 2; }
   .top-box a.active em {
     opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }
 
 .tab-name {
@@ -766,6 +798,7 @@ body {
           position: absolute;
           left: 47px;
           top: 50%;
+          -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
           width: 1.5em;
           float: right;
@@ -933,6 +966,7 @@ body {
       border-radius: 50%;
       border: 4px solid #000;
       cursor: pointer;
+      -webkit-transition: all .3s;
       transition: all .3s; }
 
 .dot-nav span.active {
@@ -951,6 +985,7 @@ body {
     width: 50px;
     height: 150px;
     padding-left: 32px;
+    -webkit-transition: all .3s;
     transition: all .3s; }
     .strategy-nav a:hover {
       margin-top: -10px; }
@@ -994,10 +1029,13 @@ body {
       height: 91px;
       background-position: -1200px -200px;
       opacity: 0;
+      -webkit-transition: all .3s linear;
       transition: all .3s linear;
+      -webkit-transform: translate3d(0, 10%, 0);
       transform: translate3d(0, 10%, 0); }
   .top-tabs a.active em {
     opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }
   .top-tabs .strategy-name {
     width: 134px;
@@ -1067,8 +1105,7 @@ body {
 
 #tongren {
   width: 1220px;
-  margin: 0 auto;
-  margin-bottom: 50px; }
+  margin: 0 auto 50px; }
 
 .tongren-top {
   position: relative;
@@ -1113,6 +1150,7 @@ body {
         height: 54px;
         background: black;
         background: url("../img/icons.png");
+        -webkit-transition: all .3s linear;
         transition: all .3s linear; }
     .tongren-tabs li a.first {
       border: none; }
@@ -1160,8 +1198,10 @@ body {
   width: 101px;
   height: 24px;
   background-position: -330px -720px;
+  -webkit-transition: all .15s linear;
   transition: all .15s linear; }
   .contribute:hover {
+    -webkit-transform: translate3d(10px, 0, 0);
     transform: translate3d(10px, 0, 0); }
 
 .tongren-list-wrap {
@@ -1209,6 +1249,7 @@ body {
           width: 100%;
           height: 100%;
           opacity: 0;
+          -webkit-transition: opacity .5s ease;
           transition: opacity .5s ease;
           background: url("../img/mask.png") repeat; }
           .tongren-list ul li a span em {
@@ -1223,6 +1264,7 @@ body {
       .tongren-list ul li img {
         width: 100%;
         height: 100%;
+        -webkit-transition: all .4s;
         transition: all .4s; }
 
 #video_paper {
@@ -1252,8 +1294,10 @@ body {
     .video a img, .paper a img {
       width: 100%;
       height: 154px;
+      -webkit-transition: all .5s;
       transition: all .5s; }
       .video a img:hover, .paper a img:hover {
+        -webkit-transform: scale(1.1);
         transform: scale(1.1); }
     .video a p, .paper a p {
       width: 100%;
@@ -1300,8 +1344,10 @@ body {
         height: 153px;
         overflow: hidden; }
         .activity-wrap ul li a img {
+          -webkit-transition: all .3s;
           transition: all .3s; }
           .activity-wrap ul li a img:hover {
+            -webkit-transform: scale(1.1);
             transform: scale(1.1); }
         .activity-wrap ul li a span {
           position: absolute;
@@ -1417,8 +1463,10 @@ body {
   width: 25px;
   height: 111px;
   background-position: -1047px -415px;
+  -webkit-transition: all .3s linear;
   transition: all .3s linear; }
   .back-top:hover {
+    -webkit-transform: translate3d(0, -20px, 0);
     transform: translate3d(0, -20px, 0); }
 
 #go-exp {
@@ -1437,13 +1485,16 @@ body {
   height: 330px;
   margin: 0 auto; }
   .go-exp-btn:hover .door {
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }
   .go-exp-btn:hover .top-text {
     opacity: 0; }
   .go-exp-btn:hover .mid-qrcode {
     opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }
   .go-exp-btn:hover em {
+    -webkit-transform: translate3d(0, -80px, 0);
     transform: translate3d(0, -80px, 0); }
   .go-exp-btn em {
     display: block;
@@ -1451,6 +1502,7 @@ body {
     height: 118px;
     margin: 0 auto;
     background-position: -973px -415px;
+    -webkit-transition: all .4s linear;
     transition: all .4s linear; }
 
 .text {
@@ -1459,6 +1511,7 @@ body {
   height: 62px;
   margin: 0 auto;
   background-position: 0px -1240px;
+  -webkit-transition: all .5s linear;
   transition: all .5s linear; }
 
 .top-text {
@@ -1467,6 +1520,7 @@ body {
   height: 73px;
   margin: 0 auto;
   background-position: -961px -1147px;
+  -webkit-transition: all .5s linear;
   transition: all .5s linear; }
 
 .mid-qrcode {
@@ -1477,7 +1531,9 @@ body {
   height: 152px;
   margin-left: -76px;
   opacity: 0;
+  -webkit-transform: translate3d(0, 30px, 0);
   transform: translate3d(0, 30px, 0);
+  -webkit-transition: all .5s ease;
   transition: all .5s ease; }
   .mid-qrcode img {
     float: left;
@@ -1497,7 +1553,9 @@ body {
   height: 208px;
   margin: 0 auto;
   background-position: -458px 0px;
+  -webkit-transition: all .5s linear;
   transition: all .5s linear;
+  -webkit-transform: translate3d(0, -30px, 0);
   transform: translate3d(0, -30px, 0); }
 
 #footer {

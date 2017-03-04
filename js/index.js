@@ -1,7 +1,6 @@
 $(function () {
     $(window).scroll(function () {
         var $topBar = $("#top-bar");
-        var $top = $topBar.offset().top;
         var $scrollTop = $(document).scrollTop();
         if ($scrollTop > 0) {
             $topBar.addClass("fixed");
@@ -15,12 +14,33 @@ $(function () {
     });
 
     /*导航下拉菜单*/
+    var timer = null;
+    $(".tongren-drop").hover(function () {
+        $(".tongren").stop().slideDown().siblings().hide();
+    }, function () {
+        timer = setTimeout(function () {
+            $(".tongren").stop().slideUp();
+        }, 200)
+    });
+    $(".tongren").hover(function () {
+        clearTimeout(timer);
+        $(this).css("display", "block")
+    }, function () {
+        $(this).stop().slideUp();
+    });
 
-     $(".tongren-drop").hover(function () {
-         $(".tongren").stop().slideToggle()
-     });
     $(".official-drop").hover(function () {
-        $(".qudao").stop().slideToggle()
+        $(".qudao").stop().slideDown().siblings().hide();
+    }, function () {
+        timer = setTimeout(function () {
+            $(".qudao").stop().slideUp();
+        }, 200)
+    });
+    $(".qudao").hover(function () {
+        clearTimeout(timer);
+        $(this).css("display", "block")
+    }, function () {
+        $(this).stop().slideUp();
     });
 
     $(".qingming,.shenle,.slogon,.logo").addClass("animate");
@@ -103,8 +123,6 @@ $(function () {
         });
         $prev.click(function () {
             $next.show();
-            var len = $(".shishen-list ul").length;
-            var page = Math.ceil(len / 6);
             iNow === 1 ? $(this).hide() : $(this).show();
             iNow > 0 && iNow--;
             $(".shishen-list").stop().animate({"left": -828 * iNow});
@@ -154,17 +172,17 @@ $(function () {
     shishen();
 
     /*平安之旅-主角*/
-        $(".top-box a").click(function () {
-            var index = $(".top-box a").index(this);
-            $(this).addClass("active").siblings().removeClass("active");
-            $(".bottom-box").children().eq(index).show().siblings().hide();
+    $(".top-box a").click(function () {
+        var index = $(".top-box a").index(this);
+        $(this).addClass("active").siblings().removeClass("active");
+        $(".bottom-box").children().eq(index).show().siblings().hide();
 
-        });
-        $(".left-tabs li").click(function () {
-            var index = $(this).index();
-            $(this).addClass("current").siblings().removeClass("current");
-            $(".zhujue-wrap").eq(index).addClass("show").siblings().removeClass("show");
-        });
+    });
+    $(".left-tabs li").click(function () {
+        var index = $(this).index();
+        $(this).addClass("current").siblings().removeClass("current");
+        $(".zhujue-wrap").eq(index).addClass("show").siblings().removeClass("show");
+    });
 
     /*攻略部分*/
     $(".dot-nav span").mouseover(function () {

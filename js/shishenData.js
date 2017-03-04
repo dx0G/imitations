@@ -533,4 +533,4 @@ var data = [
         "name": "般若",
         "level": "SR"
     }
-]
+];
